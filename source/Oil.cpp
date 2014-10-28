@@ -47,7 +47,7 @@ int calc_midnight_oil_brute(int n, int k){
  * @param k 2 <= k <= 10
  * @return minumum allwable value v
  */
-int calc_midnight_oil_binary(int n, int k){
+inline int calc_midnight_oil_binary(int n, int k){
    int left = 1;
    int right = n;
    while(left != right){
@@ -57,7 +57,7 @@ int calc_midnight_oil_binary(int n, int k){
       while(x != 0){
          sum += x;
          x /= k;
-      }
+      } 
       if(sum >= n){
          right = middle;
       } else {
@@ -76,7 +76,7 @@ void burning_oil_solve(std::istream& in, std::ostream& out){
    // std::ios_base::sync_with_stdio(false);
    int n, k;
    while(in >> n >> k){
-      int v = calc_midnight_oil(n, k);
+      int v = calc_midnight_oil_binary(n, k);
       out << v << std::endl;
    }
 }
